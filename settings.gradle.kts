@@ -21,6 +21,6 @@ dependencyResolutionManagement {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-rootProject.name = "SankouViewTestApp2"
+rootProject.name = "SankouViewLibrary"
 include(":app")
 include(":sankouview")

@@ -1,9 +1,6 @@
 package com.hennge.sankou.viewtestapp
 
 import android.os.Bundle
-import android.widget.FrameLayout
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.LocalActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -35,7 +32,7 @@ import androidx.navigation.compose.rememberNavController
 import com.hennge.sankou.sankouview.LicenseItem
 import com.hennge.sankou.sankouview.OnListInteraction
 import com.hennge.sankou.sankouview.SankouView
-import com.hennge.sankou.viewtestapp.ui.theme.SankouViewTestApp2Theme
+import com.hennge.sankou.viewtestapp.ui.theme.SankouViewLibraryTheme
 
 class MainActivity : AppCompatActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -43,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            SankouViewTestApp2Theme {
+            SankouViewLibraryTheme {
                 val navController: NavHostController = rememberNavController()
                 val items = SankouView.getLicenseItems(this@MainActivity, "app/cash/licensee/artifacts.json")
 

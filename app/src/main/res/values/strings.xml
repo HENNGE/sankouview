@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SankouViewTestApp2</string>
+    <string name="app_name">SankouViewLibrary</string>
     <string name="main_screen">Main Screen</string>
     <string name="list_screen">List Screen</string>
     <string name="detail_screen">Detail Screen</string>
