@@ -125,7 +125,7 @@ fun LicenseListScreenComposable (items: List<LicenseItem>, theme: ColorScheme, c
                 composable(LicenseScreen.LicenseList.route) {
                     LicenseListComposable(items = items, modifier = Modifier, listener = object: OnListInteraction{
                         override fun onListItemClick(clickedItem: LicenseItem, index: Int) {
-                            currentTitle = items[index].name
+                            currentTitle = items[index].name ?: "<Empty>"
                             navController.navigate("${LicenseScreen.LicenseDetail}/$index")
                         }
                     })
@@ -185,7 +185,7 @@ internal fun LicenseListItem (item: LicenseItem, index: Int, modifier: Modifier 
         ) {
 
             Text(
-                text = item.name,
+                text = item.name ?: "<Empty>",
                 style = TextStyle(
                     color = MaterialTheme.colorScheme.onBackground,
                     fontWeight = FontWeight.W600,
@@ -215,7 +215,7 @@ internal fun LicensePageItem (item: LicenseItem) {
     Column(Modifier.fillMaxWidth().padding(15.dp)) {
         Row(Modifier.fillMaxWidth().padding(bottom = 5.dp), verticalAlignment = Alignment.Bottom) {
             Text(
-                text = item.name,
+                text = item.name?:"",
                 style = TextStyle(
                     color = MaterialTheme.colorScheme.onSurface,
                     fontWeight = FontWeight.W600,
@@ -236,7 +236,7 @@ internal fun LicensePageItem (item: LicenseItem) {
         }
         LazyRow {
             itemsIndexed(item.spdxLicenses) { index, item ->
-                Text(text = item.name,
+                Text(text = item.name ?: "<Empty>",
                     style = TextStyle(
                         color = MaterialTheme.colorScheme.onSurface,
                         fontWeight = FontWeight.W400,
@@ -248,7 +248,7 @@ internal fun LicensePageItem (item: LicenseItem) {
             }
         }
 
-        Text(text = item.scm.url,
+        Text(text = item.scm?.url ?: "<Empty>",
             style = TextStyle(
                 color = Color.Blue,
                 fontWeight = FontWeight.W800,
@@ -259,10 +259,11 @@ internal fun LicensePageItem (item: LicenseItem) {
             modifier = Modifier.padding(start=5.dp, top=5.dp, end=5.dp)
                 .clickable {
                     try {
-                        //val localContext = LocalContext.current
-                        val browseIntent =
-                            Intent(Intent.ACTION_VIEW, item.scm.url.toUri())
-                        localContext.startActivity(browseIntent, null)
+                        item.scm?.url?.let { scmUrl ->
+                            val browseIntent =
+                                Intent(Intent.ACTION_VIEW, scmUrl.toUri())
+                            localContext.startActivity(browseIntent, null)
+                        }
                     } catch (e: Exception) {
 
                     }

@@ -22,6 +22,6 @@ class LicenseJSONUnitTest {
         assert(testUrlList[1].groupId == "androidx.activity")
         assert(testUrlList[1].spdxLicenses[0].name == "Apache License 2.0")
         assert(testUrlList[2].version == "1.10.1")
-        assert(testUrlList[2].scm.url == "https://cs.android.com/androidx/platform/frameworks/support")
+        assert(testUrlList[2].scm?.url == "https://cs.android.com/androidx/platform/frameworks/support")
     }
 }

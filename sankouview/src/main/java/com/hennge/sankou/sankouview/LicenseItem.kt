@@ -15,20 +15,32 @@
  */
 package com.hennge.sankou.sankouview
 
+import com.google.gson.annotations.SerializedName
+
 data class LicenseItem (
-    val groupId: String,
-    val artifactId: String,
-    val version: String,
-    val name: String,
+    @SerializedName("groupId")
+    val groupId: String?,
+    @SerializedName("artifactId")
+    val artifactId: String?,
+    @SerializedName("version")
+    val version: String?,
+    @SerializedName("name")
+    val name: String?,
+    @SerializedName("spdxLicenses")
     val spdxLicenses: List<SpdxLicense>,
-    val scm: Scm
+    @SerializedName("scm")
+    val scm: Scm?
 ) {
     data class SpdxLicense (
-        val identifier: String,
-        val name: String,
-        val url: String
+        @SerializedName("identifier")
+        val identifier: String?,
+        @SerializedName("name")
+        val name: String?,
+        @SerializedName("url")
+        val url: String?
     )
     data class Scm (
-        val url: String
+        @SerializedName("url")
+        val url: String?
     )
 }
