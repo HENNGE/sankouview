@@ -46,24 +46,9 @@ android {
         allow(SpdxId.Apache_20)
         allow(SpdxId.MIT)
     }
-
-    //TODO: Figure out how to locate the external file?
-    //      Right now this is being changed in the base library so I should wait and see.
-//    tasks.register("sankouview", Task::class) {
-//        doLast {
-//            //Run licensee
-//            licensee
-//            //Copy the resulting file
-//
-//
-//            val sourceFile = File("$buildOutputs/reports/licensee/$variant")
-//            val destFile = File("$rootProject/assets/license-data.json")
-//        }
-//    }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

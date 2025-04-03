@@ -16,3 +16,11 @@ This library depends on output from the licensee library and provides multiple w
 
 ### Call as a Compose View
 (TODO)
+
+## Authors
+
+Module managed by [HENNGE](https://github.com/HENNGE).
+
+## License
+
+Apache 2 Licensed. See LICENSE for full details.

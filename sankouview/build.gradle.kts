@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    `maven-publish`
 }
 
 android {
@@ -69,4 +70,41 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+afterEvaluate {
+//    java {
+////        toolchain {
+////            languageVersion = JavaLanguageVersion.of(17)
+////        }
+//        withJavadocJar()
+//        withSourcesJar()
+//    }
+//
+    publishing {
+        publications {
+            register<MavenPublication>("release") {
+                //setGroupId groupId
+                groupId = "com.hennge.sankou"
+                //setArtifactId artifactId
+                artifactId = "sankouview"
+                version = "0.1.0"
+                //from components.java
+
+                afterEvaluate {
+                    from(components["release"])
+                }
+            }
+
+        }
+//        repositories {
+//            maven {
+//                name = "myrepo"
+//                url = uri(layout.buildDirectory.dir("repo"))
+//            }
+//        }
+        repositories {
+            mavenLocal()
+        }
+    }
 }
