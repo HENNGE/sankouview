@@ -27,7 +27,7 @@ class SankouViewActivity : ComponentActivity() {
 
         //TODO: give way to pull data from a separate project.
         setContent {
-            SankouView.ProcessLicenseList("app/cash/licensee/artifacts.json", callback = object: LicenseScreenCallback {
+            SankouView.ProcessLicenseList(Constants.LICENSE_DATA_LOCATION, callback = object: LicenseScreenCallback {
                 override fun onNavigateUpCalled() {
                     this@SankouViewActivity.finish()
                 }

@@ -36,6 +36,11 @@ object SankouView {
         activity.startActivity(Intent(activity.baseContext, SankouViewActivity::class.java))
     }
 
+    @Composable
+    fun GenerateLicenseList(callback: LicenseScreenCallback) {
+        ProcessLicenseList(assetsLicenseFile=Constants.LICENSE_DATA_LOCATION, callback=callback)
+    }
+
     /**
      * For generating a whole screen from our license asset data. Includes a
      * top bar with navigation and a callback for closing the view.
