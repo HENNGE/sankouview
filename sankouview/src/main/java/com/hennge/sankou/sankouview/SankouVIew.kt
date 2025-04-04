@@ -36,6 +36,12 @@ object SankouView {
         activity.startActivity(Intent(activity.baseContext, SankouViewActivity::class.java))
     }
 
+    /**
+     * An all encompassing composable that handles both list and detail view of licenses.
+     * This contains a top bar and navigation view so expects full screen treatment and will look weird inside
+     * a separate navigation view. The callback is for intercepting a navigate up request
+     * from the contained composable.
+     */
     @Composable
     fun GenerateLicenseList(callback: LicenseScreenCallback) {
         ProcessLicenseList(assetsLicenseFile=Constants.LICENSE_DATA_LOCATION, callback=callback)
@@ -57,6 +63,15 @@ object SankouView {
         }
 
         LicenseListScreenComposable(items, colorScheme, callbacks = callback)
+    }
+
+    /**
+     * Get the list of licence items from the expected location.
+     * (Warning: could change in the future)
+     */
+    fun licenseItems(context: Context): List<LicenseItem> {
+        val data = JsonUtils.loadDataListFromAssetsFile<Array<LicenseItem>>(context, Constants.LICENSE_DATA_LOCATION)
+        return data.toList()
     }
 
     /**

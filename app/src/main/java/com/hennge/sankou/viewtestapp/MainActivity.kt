@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         setContent {
             SankouViewLibraryTheme {
                 val navController: NavHostController = rememberNavController()
-                val items = SankouView.getLicenseItems(this@MainActivity, "app/cash/licensee/artifacts.json")
+                val items = SankouView.licenseItems(this@MainActivity)
 
                 Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
                     TopAppBar(
