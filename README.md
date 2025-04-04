@@ -1,5 +1,8 @@
 # sankouview
-A simple Kotlin based viewer for displaying Open Source Software (OSS) license data for Android. The purpose of this tool is a drop-in replacement for previous (now deprecated) license listing tools. The hope of this library is to eliminate the extra work of showing a library while being flexiable enought to fit into various layouts and navigation schemes.
+[<img src="https://github.com/user-attachments/assets/f60a5cec-1741-485f-a74b-75d167443920" width="250"/>](https://github.com/user-attachments/assets/f60a5cec-1741-485f-a74b-75d167443920)
+[<img src="https://github.com/user-attachments/assets/68052e23-6a4f-45e5-8765-16eb5a72e29f" width="250"/>](https://github.com/user-attachments/assets/68052e23-6a4f-45e5-8765-16eb5a72e29f)
+
+A simple Kotlin based viewer for displaying Open Source Software (OSS) license data for Android. The purpose of this tool is a drop-in replacement for previous (now deprecated) license listing tools. The hope of this library is to eliminate the extra work of showing library information while being flexiable enought to fit into various layouts and navigation schemes.
 
 # Design
 Currently this tool relies on he [licensee library](https://github.com/cashapp/licensee) for parsing data. 
@@ -12,9 +15,32 @@ This library depends on output from the licensee library and provides multiple w
 This project requires the [licensee library](https://github.com/cashapp/licensee) and is dependant on version 1.13.0 at a minimum to function. Before using this project its recommended to go read up on the licensee library directly.
 
 Required Includes:
+Add to your project gradle file:
+```
+//Add to the dependencies section (with classpath entries)
+classpath "app.cash.licensee:licensee-gradle-plugin:1.13.0"
+```
+
 Add to your app/gradle file:
 ```
-TODO: NEED INCLUDE INFO HERE
+//Near the top of the file to handle SpdxId includes
+import app.cash.licensee.SpdxId
+
+//Add this whereever you are adding plugins
+apply plugin: "app.cash.licensee"
+
+//Place this in your 'android' block
+licensee {
+    bundleAndroidAsset.set(true) //Required or this library will not work
+
+    //Add allowUrl/allowDependency as needed. See licensee documentation.
+
+    allow(SpdxId.Apache_20)
+    allow(SpdxId.MIT)
+}
+
+//Add to Dependencies (this library!)
+implementation "com.hennge.sankou:sankouview:0.1.0"
 ```
 
 
