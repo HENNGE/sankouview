@@ -97,12 +97,7 @@ afterEvaluate {
             }
 
         }
-//        repositories {
-//            maven {
-//                name = "myrepo"
-//                url = uri(layout.buildDirectory.dir("repo"))
-//            }
-//        }
+
         repositories {
             mavenLocal()
         }

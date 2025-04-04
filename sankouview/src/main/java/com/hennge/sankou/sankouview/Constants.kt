@@ -16,5 +16,5 @@
 package com.hennge.sankou.sankouview
 
 object Constants {
-    val LICENSE_DATA_LOCATION = "app/cash/licensee/artifacts.json"
+    const val LICENSE_DATA_LOCATION = "app/cash/licensee/artifacts.json"
 }

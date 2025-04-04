@@ -23,7 +23,6 @@ import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -137,7 +136,7 @@ interface ButtonClickListener {
 }
 
 @Composable
-fun StartScreen(innerPadding: PaddingValues, onLaunchClick: ButtonClickListener) {
+fun StartScreen(onLaunchClick: ButtonClickListener) {
     Column {
         Button(modifier=Modifier.padding(15.dp), onClick = {
             onLaunchClick.onActivityBtnClicked()

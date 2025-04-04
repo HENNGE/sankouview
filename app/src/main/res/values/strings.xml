@@ -3,5 +3,4 @@
     <string name="main_screen">Main Screen</string>
     <string name="list_screen">List Screen</string>
     <string name="detail_screen">Detail Screen</string>
-    <string name="fragment_screen">Fragment Screen</string>
 </resources>

@@ -2,6 +2,4 @@
     <string name="app_name">SankouView</string>
     <string name="license_list_title">Licenses</string>
     <string name="license_detail_title">License Detail</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

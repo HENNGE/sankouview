@@ -31,11 +31,6 @@ private val DarkSurface = Color(0x0DFFFFFF)
 private val DarkOnSurface = Color(0x99FFFFFF)
 private val DarkOnSurfaceVariant = Color(0xDEFFFFFF)
 
-// Convert these to error/etc values..
-val IconGreenTint = Color(0xFF00A445)
-val ErrorRedBorder = Color(0xFFA67571)
-val ErrorRedBackground = Color(0xFFF1D4D0)
-
 val DarkColors = darkColorScheme(
     primary = PurplePrimaryDark,
     onPrimary = Color.White,
