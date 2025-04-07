@@ -46,7 +46,7 @@ implementation "com.hennge.sankou:sankouview:0.1.0"
 
 Other Minimum requirements to function with this library:
 - This library supports Android 11 and greater.
-- If you use Compose in your project, you must be on version 2.0 or greater or it will conflict with this project
+- If you use Kotlin in your project, you must be on version 2.0 or greater or it will conflict with this project
 
 # Usage
 ### Call as an activity
