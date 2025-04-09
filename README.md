@@ -95,3 +95,7 @@ val items = SankouView.licenseItems(context=LocalContext.current)
 ## Authors
 
 Module managed by [HENNGE](https://github.com/HENNGE).
+
+## License
+
+sankouview is licensed by HENNGE under the Apache License, Version 2.0. See [LICENSE](LICENSE) for the full license text.
