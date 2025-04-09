@@ -97,8 +97,6 @@ val items = SankouView.licenseItems(context=LocalContext.current)
 Module managed by [HENNGE](https://github.com/HENNGE).
 
 ## License
-
-## License
 ```
 Copyright 2025 HENNGE, K.K.
 
