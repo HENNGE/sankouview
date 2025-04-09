@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
                         modifier = Modifier.padding(innerPadding)
                     ) {
                         composable(Screen.MainScreen.route) {
-                            StartScreen(innerPadding, onLaunchClick = object: ButtonClickListener{
+                            StartScreen(onLaunchClick = object: ButtonClickListener{
                                 override fun onActivityBtnClicked() {
                                     SankouView.launchLicenseActivity(this@MainActivity)
                                 }
