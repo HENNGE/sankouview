@@ -88,7 +88,7 @@ afterEvaluate {
                 groupId = "com.hennge.sankou"
                 //setArtifactId artifactId
                 artifactId = "sankouview"
-                version = "0.1.3"
+                version = "0.1.2"
                 //from components.java
 
                 afterEvaluate {
