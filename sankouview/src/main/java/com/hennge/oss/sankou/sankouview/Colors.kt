@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hennge.sankou.sankouview
+package com.hennge.oss.sankou.sankouview
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme

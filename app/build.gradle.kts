@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.hennge.sankou.viewtestapp"
+    namespace = "com.hennge.oss.sankou.com.hennge.oss.sankou.viewtestapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.hennge.sankou.viewtestapp"
+        applicationId = "com.hennge.oss.sankou.com.hennge.oss.sankou.viewtestapp"
         minSdk = 30
         targetSdk = 35
         versionCode = 1

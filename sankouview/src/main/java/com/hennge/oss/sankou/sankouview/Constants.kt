@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hennge.sankou.sankouview
+package com.hennge.oss.sankou.sankouview
 
-import androidx.annotation.StringRes
-
-sealed class LicenseScreen(val route: String, @StringRes val resourceId: Int, @StringRes val menuName: Int? = null) {
-    data object LicenseList: LicenseScreen("licenseList",R.string.license_list_title, R.string.license_list_title)
-    data object LicenseDetail: LicenseScreen("licenseDetail",R.string.license_detail_title, R.string.license_detail_title)
+object Constants {
+    const val LICENSE_DATA_LOCATION = "app/cash/licensee/artifacts.json"
 }

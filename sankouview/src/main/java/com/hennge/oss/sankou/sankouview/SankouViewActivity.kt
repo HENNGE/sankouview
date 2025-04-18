@@ -13,23 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.hennge.sankou.sankouview
+package com.hennge.oss.sankou.sankouview
 
 import android.os.Bundle
-import androidx.activity.compose.setContent
 import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.MaterialTheme
 
-class PreviewActivity : ComponentActivity() {
+class SankouViewActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        //TODO: give way to pull data from a separate project.
         setContent {
-            MaterialTheme {
-                //Placeholder
-            }
+            SankouView.ProcessLicenseList(Constants.LICENSE_DATA_LOCATION, callback = object: LicenseScreenCallback {
+                override fun onNavigateUpCalled() {
+                    this@SankouViewActivity.finish()
+                }
+            })
         }
     }
-
 }
