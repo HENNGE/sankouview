@@ -3,7 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     `maven-publish`
-    signing
+    id("com.vanniktech.maven.publish") version "0.31.0"
+    id("com.gradleup.nmcp") version "0.0.9"
 }
 
 android {
