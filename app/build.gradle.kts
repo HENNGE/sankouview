@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.hennge.oss.sankou.com.hennge.oss.sankou.viewtestapp"
+    namespace = "com.hennge.oss.sankou.viewtestapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.hennge.oss.sankou.com.hennge.oss.sankou.viewtestapp"
+        applicationId = "com.hennge.oss.sankou.viewtestapp"
         minSdk = 30
         targetSdk = 35
         versionCode = 1
@@ -70,7 +70,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
 
     // Test Api
-    implementation(projects.sankouview)
+    implementation(libs.sankou.sankouview)
 
     // Serialization
     implementation(libs.gson)

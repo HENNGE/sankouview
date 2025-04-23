@@ -1,3 +1,5 @@
+import com.vanniktech.maven.publish.AndroidSingleVariantLibrary
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
@@ -42,12 +44,6 @@ android {
         }
     }
 
-    publishing {
-        singleVariant("release") {
-            withSourcesJar()
-        }
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -81,56 +77,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 
-publishing {
-    publications {
-        register<MavenPublication>("release") {
-            //setGroupId groupId
-            groupId = "com.hennge.sankou"
-            //setArtifactId artifactId
-            artifactId = "sankouview"
-            version = "0.1.2"
-            //from components.java
-
-            pom {
-                name = "SankouView"
-                description = "A simple library for displaying open source license references. Based on Licensee."
-                url = "https://github.com/HENNGE/sankouview"
-
-                licenses {
-                    license {
-                        name = "The Apache License, Version 2.0"
-                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
-                    }
-                }
-
-                developers {
-                    developer {
-                        id = "charles-hennge"
-                        name = "Charles Bond"
-                        email = "charles.bond@hennge.com"
-                    }
-                }
-                scm {
-                    connection = "scm:git:git://github.com/HENNGE/sankouview.git"
-                    developerConnection = "scm:git:ssh://github.com/HENNGE/sankouview.git"
-                    url = "https://github.com/HENNGE/sankouview/"
-                }
-            }
-
-            afterEvaluate {
-                from(components["release"])
-            }
-        }
-    }
-
-    repositories {
-        mavenLocal()
-//        maven { // todo
-//            //url 'https://jitpack.io'
-//        }
-    }
+mavenPublishing {
+    configure(AndroidSingleVariantLibrary("release", true, true))
 }
-
-//signing { //TODO
-//    sign(publishing.publications["release"])
-//}

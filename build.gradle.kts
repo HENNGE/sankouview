@@ -5,7 +5,6 @@ buildscript {
     }
     dependencies {
         classpath(libs.licensee.gradle.plugin)
-
     }
 }
 

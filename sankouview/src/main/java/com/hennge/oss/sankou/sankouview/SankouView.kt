@@ -36,6 +36,14 @@ object SankouView {
     }
 
     /**
+     * Simple method to return an intent for launching the license info activity.
+     * This is most useful for controlling behavior when the activity closes (via ActivityResultLauncher)
+     */
+    fun launchLicenseActivityInstance(activity: Activity): Intent {
+        return Intent(activity.baseContext, SankouViewActivity::class.java)
+    }
+
+    /**
      * An all encompassing composable that handles both list and detail view of licenses.
      * This contains a top bar and navigation view so expects full screen treatment and will look weird inside
      * a separate navigation view. The callback is for intercepting a navigate up request
