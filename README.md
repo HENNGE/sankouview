@@ -40,7 +40,7 @@ licensee {
 }
 
 //Add to Dependencies (this library!)
-implementation "com.hennge.oss.sankou:sankouview:0.1.0"
+implementation "com.hennge.oss.sankou:sankouview:0.1.3"
 ```
 
 
